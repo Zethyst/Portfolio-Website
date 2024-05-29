@@ -1,4 +1,3 @@
-import { IonIcon } from "react-ion-icon";
 import { Project } from "./types";
 
 // language icon images
@@ -61,7 +60,7 @@ export const inotebookProjectData: Project = {
   ],
   repository: "https://github.com/Zethyst/iNotebook",
   live: "https://inotebook-gold.onrender.com/",
-  icon: <IonIcon name="book" size="large" />,
+  icon: <i className="fa-solid fa-book-open fa-2xl"></i>,
   bg: "linear-gradient(62deg, #ae8625 0%, #f7e58a 75%, #d2ac47 100%)",
   scale: 2,
 };
@@ -81,7 +80,7 @@ export const newsappProjectData: Project = {
   imgs: [{ src: newsappImg1 }],
   repository: "https://github.com/Zethyst/NewsApp",
   live: "https://zethyst.github.io/NewsApp/",
-  icon: <IonIcon name="newspaper" size="large" />,
+  icon: <i className="fa-solid fa-newspaper fa-2xl"></i>,
   bg: "linear-gradient(24deg, #6157FF, #EE49FD)",
   scale: 2,
 };
@@ -105,7 +104,7 @@ export const musicappProjectData: Project = {
   ],
   repository: "https://github.com/Zethyst/Tunetron-Music-Player",
   live: "https://tunetron.vercel.app/",
-  icon: <i className="fa-solid fa-music scale-150"></i>,
+  icon: <i className="fa-solid fa-music  fa-2xl"></i>,
   bg: "radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% )",
   scale: 4,
 };
@@ -125,7 +124,7 @@ export const mergerProjectData: Project = {
   imgs: [{ src: MergerImg1 }],
   repository: "https://github.com/Zethyst/PDF-Merge-Express",
   live: "https://pdf-merger-zethyst.onrender.com/",
-  icon: <i className="fa-solid fa-file-pdf scale-150"></i>,
+  icon: <i className="fa-solid fa-file-pdf  fa-2xl"></i>,
   bg: "linear-gradient(24deg, #33001b, #ff0084)",
   scale: 3.5,
 };

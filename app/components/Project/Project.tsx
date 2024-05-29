@@ -1,8 +1,6 @@
 "use client"
 import React, { useState } from 'react';
 import { Element } from 'react-scroll';
-import { IonIcon } from 'react-ion-icon';
-import { StaticImageData } from 'next/image';
 import HighlightProject from './HighlightProject';
 import { Project as ProjectType } from './types';
 

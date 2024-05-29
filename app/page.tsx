@@ -19,6 +19,7 @@ export default function Home() {
    const [scrollProgress, setScrollProgress] = useState<number>(0);
    const [showMobileMenu, setShowMobileMenu] = useState(false);
    const [currentPage, setCurrentPage] = useState("home");
+   const [count,setCount] = useState(0);
 
    const scrollListener = () => {
     console.log("Reach");
@@ -92,12 +93,7 @@ export default function Home() {
     }
   }, []);  
 
-  useEffect(() => {
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
 
-  }, [])
   
 
   return (
