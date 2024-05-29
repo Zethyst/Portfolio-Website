@@ -1,9 +1,14 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Element } from "react-scroll";
 import { languages, techData, otherSkills } from "./SkillsData";
 import { StaticImageData } from 'next/image';
 import  Image  from 'next/image';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
 
 interface Skill{
     name:string;
@@ -15,14 +20,66 @@ function Skills() {
     const [showAll,setShowAll]=useState<boolean>(false);
     const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
+    
+    
+  useEffect(() => {
+    let tl=gsap.timeline();
+    tl.to("#skill0", {
+      scrollTrigger: ".corners",
+      scale: 1,
+      duration: 0.5,
+    });
+
+    tl.to("#skill1", {
+      scale: 1,
+      duration: 0.5,
+      
+    });
+
+    tl.to("#skill2", {
+      scale: 1,
+      duration: 0.5,
+  
+    });
+
+    tl.to("#skill3", {
+      scale: 1,
+      duration: 0.5,
+      
+    });
+    tl.to("#skill4", {
+      scale: 1,
+      duration: 0.5,
+      
+    });
+
+    tl.to("#skill5", {
+      scale: 1,
+      duration: 0.5,
+  
+    });
+
+    tl.to("#skill6", {
+      scale: 1,
+      duration: 0.5,
+      
+    });
+    tl.to("#skill7", {
+      scale: 1,
+      duration: 0.5,
+      
+    });
+      }, []); 
+
 
     const mapSkills = (skills:Skill[]) => {
         return skills.map((skill,index) => (
             <div
+            id={`skill${index}`}
             key={index}
             onMouseLeave={() => setHoveredSkill(null)}
             onMouseEnter={() => setHoveredSkill(skill.name)}
-            className={`skill-container ${hoveredSkill === skill.name ? skill.name.toLowerCase() : ''} ${showAll?skill.name.toLowerCase() : ''} pointer-events-auto lowercase z-20 flex md:justify-center md:items-center py-0 md:px-4 font-bold bg-[#1a1e21] overflow-hidden cursor-pointer transition-all ease-in duration-150  w-full md:min-w-customWidth`}
+            className={`scale-0 skill-container ${hoveredSkill === skill.name ? skill.name.toLowerCase() : ''} ${showAll?skill.name.toLowerCase() : ''} pointer-events-auto lowercase z-20 flex md:justify-center md:items-center py-0 md:px-4 font-bold bg-[#1a1e21] overflow-hidden cursor-pointer transition-all ease-in duration-150  w-full md:min-w-customWidth`}
           >
                 <div className={`img-container ${skill.name.toLowerCase()} lowercase max-w-[60px] min-w-[60px] min-h-[50px] max-h-[50px] flex justify-center items-center`}>
                 <Image src={skill.icon}  alt="Skill Icon" className='w-8'/>
@@ -41,7 +98,7 @@ function Skills() {
       <div className="top right"></div>
       <div className="bottom right"></div>
       <div className="bottom left"></div>
-      <div className="cut font-semibold text-white flex flex-col md:flex-row relative overflow-hidden w-[80%]  pointer-events-none">
+      <div id='trigger' className="cut font-semibold text-white flex flex-col md:flex-row relative overflow-hidden w-[80%]  pointer-events-none">
           <div className="md:h-full bg-[#1A1E21] md:w-96 flex flex-col gap-7 p-7 md:p-10 justify-center items-center">
           <p onMouseLeave={() => setShowAll(false)}
             onMouseEnter={() => setShowAll(true)} className={`text-4xl md:text-6xl pointer-events-auto tracking-wider heading relative uppercase italic text-[#ccc] `} style={{fontFamily:"Russo One, sans-serif"}}>Skills</p>

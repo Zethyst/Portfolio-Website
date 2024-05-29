@@ -1,11 +1,16 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Element } from 'react-scroll';
 import HighlightProject from './HighlightProject';
 import { Project as ProjectType } from './types';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
 
 import {
-    inotebookProjectData,
+  inotebookProjectData,
     newsappProjectData,
     musicappProjectData,
     mergerProjectData,
@@ -14,6 +19,42 @@ import ImageModal from '../Modal/ImageModal';
 
 
 function Project() {
+
+    
+  useEffect(() => {
+    gsap.to("#project0", {
+      scale: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#trigger",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none play play",
+      },
+    });
+
+    gsap.to("#project1", {
+      scale: 1,
+      duration: 1,
+      delay:1,
+      
+    });
+
+    gsap.to("#project2", {
+      scale: 1,
+      duration: 1,
+      delay:2,
+  
+    });
+
+    gsap.to("#project3", {
+      scale: 1,
+      duration: 1,
+      delay:3,
+      
+    });
+      }, []); 
+
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const audioRef = React.createRef<HTMLAudioElement>();
 
@@ -68,7 +109,7 @@ function Project() {
       <div className="top right"></div>
       <div className="bottom right"></div>
       <div className="bottom left"></div>
-      <div className="cut font-semibold text-white flex flex-col relative overflow-hidden w-[80%] ">
+      <div id='trigger' className="cut font-semibold text-white flex flex-col relative overflow-hidden w-[80%] ">
         <div className="h-full bg-[#1A1E21] w-full p-6 md:p-8 flex justify-center items-center">
           <p
             className="text-4xl md:text-6xl tracking-wider heading relative uppercase italic text-[#ccc]"

@@ -113,7 +113,7 @@ const HighlightProject: React.FC<HighlightProjectProps> = ({
         </div>
       </div>
       {/* RIGHT */}
-      <div className="flex m-6 bg-[#1a1e21] ImageContainerNotch" style={{flex:"2"}}>
+      <div className="w-full flex mx-auto my-10 bg-[#1a1e21] ImageContainerNotch" style={{flex:"2"}}>
         <div className="pointer-events-auto inner my-4 mx-3 overflow-y-scroll w-full flex items-start justify-center ImageInnerNotch">
             <div className="gallery flex flex-col">
             {project.imgs.map((img, i) => {

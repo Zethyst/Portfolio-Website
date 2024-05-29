@@ -39,7 +39,7 @@ function Certificates() {
             className="text-4xl md:text-5xl tracking-wider heading relative uppercase italic text-[#ccc]"
             style={{ fontFamily: "Russo One, sans-serif" }}
           >
-            Bondafides
+            Bonafides
           </p>
           <p className='text-[#ccc] text-xs md:text-sm translate-y-5 py-2'>Here are some of the certificates I have recieved from completing courses online and attending bootcamps.</p>
         </div>
