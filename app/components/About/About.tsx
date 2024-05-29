@@ -86,7 +86,7 @@ const About: React.FC = () => {
       console.log("Vibration API is not supported on this device.");
     }
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=10oBO9snEpW8trxUaaXW-1rulBLn-O81w';
+    link.href = 'https://drive.google.com/uc?export=download&id=1PBzE6M_AdP0K1txzU68CS6WbatSArmQ2';
     link.download = 'Resume.pdf';
     link.click();
   };
@@ -133,7 +133,7 @@ const About: React.FC = () => {
             <p className="text-base md:text-xl text-[#ccc]"><i className="fa-solid fa-angle-right mr-3 text-[#ffd474]"></i>Starting in 2021, taking on the challenge of creating the best timetable website for my class I became obsessed with the world of web development. Poring through resources such as Scrimba, w3schools, and YouTube I developed the necessary skills for becoming a full stack developer..</p>
             <div className="flex flex-col md:flex-row md:gap-64 ">
             <p className="text-base hidden md:block md:text-xl text-[#ffd474] absolute left-10 source-code-pro"><i className="fa-solid fa-angle-right mr-3"></i>Let's work together!</p>
-            <a onClick={handleDownload}  href="https://drive.google.com/file/d/10oBO9snEpW8trxUaaXW-1rulBLn-O81w/view?usp=sharing" target="_blank" className="absolute md:left-64 pointer-events-auto hover:scale-105 transition-all duration-200 ease-in button">
+            <a onClick={handleDownload}  href="https://drive.google.com/file/d/1PBzE6M_AdP0K1txzU68CS6WbatSArmQ2/view?usp=sharing" target="_blank" className="absolute md:left-64 pointer-events-auto hover:scale-105 transition-all duration-200 ease-in button">
               <button className="text-3xl font-semibold text-black"> Resume</button>
             </a>
             </div>
