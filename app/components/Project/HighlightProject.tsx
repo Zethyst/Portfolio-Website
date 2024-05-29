@@ -91,29 +91,14 @@ const HighlightProject: React.FC<HighlightProjectProps> = ({
             >
               {project.title}
             </p>
-              {/* CLOSE DETAILS */}
-            <span
-              className="material-symbols-outlined text-[#a2a0a0] cursor-pointer translate-y-1 hover:text-[#FFD474]"
-              onClick={() => handleDetails(project)}
-            >
-              close_fullscreen
-            </span>
+              {/* CLOSE DETAILS */} 
+                <i onClick={() => handleDetails(project)} className="fa-solid fa-up-right-and-down-left-from-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i>
             {/* LIVE LINK */}
-            <a href={project.live} target="_blank" rel="noopener noreferrer">
-              <span className="material-symbols-outlined text-[#a2a0a0] cursor-pointer translate-y-1 hover:text-[#FFD474]">
-                language
-              </span>
-            </a>
+            <a href={project.live} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-globe text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
+                
               {/* REPO */}
-            <a
-              href={project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="material-symbols-outlined text-[#a2a0a0] cursor-pointer translate-y-1 hover:text-[#FFD474]">
-                code
-              </span>
-            </a>
+              <a href={project.repository} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-code text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
+                
           </div>
         </div>
         {/* DESCRIPTION */}

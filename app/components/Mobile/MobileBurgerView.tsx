@@ -29,7 +29,7 @@ const MobileBurgerView: React.FC<MobileMenuProps>= ({ showMobileMenu, setShowMob
           {/* MENU CONTAINER*/} 
             <div className={` ${showMobileMenu ? "openMobileContainer" : "closeMobileContainer"} bg-[#0c0c0c] w-[70vw] min-h-[100vh] z-40 max-h-[100vh] fixed left-[-2000px] flex justify-start items-start overflow-hidden  transition-all ease-in duration-500`}>
             {/* CLOSE ICON */}
-            <span onClick={() => setShowMobileMenu(false)} className="material-symbols-outlined absolute top-6 right-6 cursor-pointer text-[#d2d2d2] z-40 min-w-8 max-w-8 min-h-8 max-h-8 scale-150">close</span>
+            <i onClick={() => setShowMobileMenu(false)} className="fa-solid fa-xmark absolute top-6 right-6 cursor-pointer text-[#d2d2d2] z-40 min-w-8 max-w-8 min-h-8 max-h-8 fa-2xl"></i>
                 <div className='mm-Wrapper flex flex-col overflow-hidden py-16 px-5 w-full z-30'>
                     <div>
 

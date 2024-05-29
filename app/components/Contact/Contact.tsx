@@ -110,7 +110,7 @@ function Contact() {
         <a href="https://wa.link/y7e6yz" target='_blank'>
         <div className='flex justify-center items-center gap-2 group pointer-events-auto'>
             <div className='flex justify-center items-center p-3 rounded-full bg-[#1A1E21] group-hover:bg-[#FFD474] group-hover:text-black text-[#ccc]'>
-            <span className="material-symbols-outlined cursor-pointer">phone</span>
+            <i className="fa-solid fa-phone cursor-pointer scale-125"></i>
             </div>
             <p className='text-[#969696] hidden md:block'>
                 <span className='text-[#ccc]'>Phone: </span>91+8318876136

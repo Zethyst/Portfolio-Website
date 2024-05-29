@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
       // }, [scrollProgress]);
 
   return (
-    <div className='sticky top-0 w-full p-3 flex justify-center md:justify-around items-center gap-5 backdrop-blur-lg shadow-lg z-10'>
+    <div className='sticky top-0 w-full p-4 py-7 md:py-5 flex justify-center md:justify-around items-center gap-5 backdrop-blur-lg shadow-lg z-10'>
         {/* MOBILE HAMBURGER */}
         <div  onClick={() => setShowMobileMenu(true)} className='block md:hidden cursor-pointer text-[#FFD474] absolute scale-125 left-10 top-[70%] translate-y-[-50%] min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
           <i className="hamburger max-w-[40px] min-h-[40px] max-h-[40px] fa-solid fa-bars scale-150"></i>

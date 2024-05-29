@@ -77,9 +77,9 @@ function Project() {
             Projects
           </p>
           <div className='hidden md:flex flex-col justify-center items-start gap-3 absolute right-8'>
-          <span className='flex justify-center items-center gap-2 text-[#ccc] font-normal'><span className="material-symbols-outlined ">{content?"open_in_full":"close_fullscreen"}</span>{content?"Expand Details":"Close Details"}</span>
-          <span className='flex justify-center items-center gap-2 text-[#ccc] font-normal'><span className="material-symbols-outlined ">language</span>Live Site</span>
-          <span className='flex justify-center items-center gap-2 text-[#ccc] font-normal'><span className="material-symbols-outlined ">code</span>Code Repo</span>
+          <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-up-right-and-down-left-from-center"></i>{content?"Expand Details":"Close Details"}</span>
+          <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-globe"></i>Live Site</span>
+          <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-code"></i>Code Repo</span>
           </div>
         </div>
         <audio ref={audioRef} src="/audio.mp3" />
@@ -113,9 +113,9 @@ function Project() {
                   {project.title}
                 </p>
                 <div className='flex justify-center items-center gap-5' >
-                <span className="material-symbols-outlined text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]" onClick={() => handleDetails(project)}>open_in_full</span>
-                <a href={project.live} target='_blank' rel="noopener noreferrer"><span className="material-symbols-outlined text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]">language</span></a>
-                <a href={project.repository} target='_blank' rel="noopener noreferrer"><span className="material-symbols-outlined text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]">code</span></a>
+                <i onClick={() => handleDetails(project)} className="fa-solid fa-up-right-and-down-left-from-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i>
+                <a href={project.live} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-globe text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
+                <a href={project.repository} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-code text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
                     </div>
                 </div>
                 <p className="hidden md:block text-md text-[#ccc]">
