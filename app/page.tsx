@@ -92,6 +92,14 @@ export default function Home() {
     }
   }, []);  
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+
+  }, [])
+  
+
   return (
     <>
       <canvas ref={canvasRef} style={{ width: '100vw', height: '100vh', zIndex: "0", position: "fixed" }} />
