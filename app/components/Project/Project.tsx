@@ -3,11 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Element } from 'react-scroll';
 import HighlightProject from './HighlightProject';
 import { Project as ProjectType } from './types';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollTrigger,ScrollToPlugin);
 
 import {
   inotebookProjectData,
@@ -20,40 +15,6 @@ import ImageModal from '../Modal/ImageModal';
 
 function Project() {
 
-    
-  useEffect(() => {
-    gsap.to("#project0", {
-      scale: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#trigger",
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none play play",
-      },
-    });
-
-    gsap.to("#project1", {
-      scale: 1,
-      duration: 1,
-      delay:1,
-      
-    });
-
-    gsap.to("#project2", {
-      scale: 1,
-      duration: 1,
-      delay:2,
-  
-    });
-
-    gsap.to("#project3", {
-      scale: 1,
-      duration: 1,
-      delay:3,
-      
-    });
-      }, []); 
 
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const audioRef = React.createRef<HTMLAudioElement>();

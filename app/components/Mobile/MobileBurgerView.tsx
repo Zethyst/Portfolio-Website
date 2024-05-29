@@ -47,7 +47,7 @@ const MobileBurgerView: React.FC<MobileMenuProps>= ({ showMobileMenu, setShowMob
                         </div>
                     {/* PAGES */}
                     <div className='flex flex-col md:flex-row w-full items-center justify-center mb-10 z-30'>
-                    <ul className='flex flex-col gap-12 font-semibold my-28'>
+                    <ul className='flex flex-col gap-12 font-semibold my-20'>
                         <ScrollLink 
                         to="about" 
                         spy={true} 
@@ -110,7 +110,7 @@ const MobileBurgerView: React.FC<MobileMenuProps>= ({ showMobileMenu, setShowMob
 
                     </ul>
                     </div>
-                    <div className='flex gap-10 absolute bottom-14 self-center z-50'>
+                    <div className='flex gap-10 absolute bottom-10 self-center z-50'>
                         <a href="https://github.com/Zethyst" target='_blank' className='scale-125 hover:text-[#FFD474]'>
                         <i className="fa-brands fa-github"></i>
                         </a>
