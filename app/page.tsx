@@ -40,19 +40,19 @@ export default function Home() {
      setScrollProgress((windowScroll / totalHeight) * 100);
    };
 
-   useEffect(() => {
-     if (!target.current) {
-       return;
-      }
+  //  useEffect(() => {
+  //    if (!target.current) {
+  //      return;
+  //     }
 
-    const element = target.current;
+  //   const element = target.current;
     
-        element.addEventListener('scroll', scrollListener);
+  //       element.addEventListener('scroll', scrollListener);
 
-        return () => {
-          element.removeEventListener('scroll', scrollListener);
-        };
-  }, []);
+  //       return () => {
+  //         element.removeEventListener('scroll', scrollListener);
+  //       };
+  // }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;

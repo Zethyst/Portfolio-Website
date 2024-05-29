@@ -28,29 +28,29 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
         }, 1500);
       };
 
-      useEffect(() => {
-        // nav background color
-        // let breakPoint = 4;
-        // if (scrollProgress > breakPoint) {
-        //   setSolidNav(true);
-        // } else if (scrollProgress <= breakPoint) {
-        //   setSolidNav(false);
-        // }
+      // useEffect(() => {
+      //   // nav background color
+      //   // let breakPoint = 4;
+      //   // if (scrollProgress > breakPoint) {
+      //   //   setSolidNav(true);
+      //   // } else if (scrollProgress <= breakPoint) {
+      //   //   setSolidNav(false);
+      //   // }
     
-        // nav current page underline
-        if (scrollProgress > 91) {
-          setCurrentPage("contact");
-        } else if (scrollProgress > 68) {
-          setCurrentPage("skill");
-        } else if (scrollProgress > 41) {
-          setCurrentPage("project");
-        } else if (scrollProgress > 18) {
-          console.log("about");
-          setCurrentPage("about");
-        } else {
-          setCurrentPage("home");
-        }
-      }, [scrollProgress]);
+      //   // nav current page underline
+      //   if (scrollProgress > 91) {
+      //     setCurrentPage("contact");
+      //   } else if (scrollProgress > 68) {
+      //     setCurrentPage("skill");
+      //   } else if (scrollProgress > 41) {
+      //     setCurrentPage("project");
+      //   } else if (scrollProgress > 18) {
+      //     console.log("about");
+      //     setCurrentPage("about");
+      //   } else {
+      //     setCurrentPage("home");
+      //   }
+      // }, [scrollProgress]);
 
   return (
     <div className='sticky top-0 w-full p-3 flex justify-center md:justify-around items-center gap-5 backdrop-blur-lg shadow-lg z-10'>

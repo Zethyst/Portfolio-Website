@@ -133,7 +133,7 @@ const HighlightProject: React.FC<HighlightProjectProps> = ({
             <div className="gallery flex flex-col">
             {project.imgs.map((img, i) => {
               return (
-                <div className="min-w-full max-w-full p-5 m flex justify-center items-center" onClick={() => handleMainImg(i)}>
+                <div key={i} className="min-w-full max-w-full p-5 m flex justify-center items-center" onClick={() => handleMainImg(i)}>
                   <Image
                     src={img.src}
                     className={`object-contain max-w-full max-h-80 cursor-pointer ${mainImgIndex === i && "current"}`}
