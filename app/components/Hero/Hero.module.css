@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'DIN';
+    src: url('/app/fonts/DIN-Condensed-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: Azonix;
+    src: url('/app/fonts/Azonix.woff2') format('woff2'),
+           url('/app/fonts/Azonix.woff') format('woff'),
+           url('/app/fonts/Azonix.otf') format('opentype');
+    
+    /* src: url('/app/fonts/Azonix.otf') format('opentype'); */
+  }
+
+.DIN{
+    font-family: 'DIN', sans-serif;
+}
+.Azonix{
+    font-family: 'Azonix', sans-serif;
+
+}
+

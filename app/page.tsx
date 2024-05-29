@@ -1,113 +1,111 @@
-import Image from "next/image";
+"use client"
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero"
+import { useEffect, useRef,createRef, useState,RefObject  } from 'react';
+import webGLFluidEnhanced from 'webgl-fluid-enhanced';
+import About from "./components/About/About";
+import Project from "./components/Project/Project";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import Skills from "./components/Skill/Skills";
+import MobileBurgerView from "./components/Mobile/MobileBurgerView";
+import Certificates from "./components/Certificate/Certificates";
 
 export default function Home() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+   //! scroll functionality for nav
+   const target: RefObject<HTMLDivElement> = createRef();
+   const [scrollProgress, setScrollProgress] = useState<number>(0);
+   const [showMobileMenu, setShowMobileMenu] = useState(false);
+   const [currentPage, setCurrentPage] = useState("home");
+
+   const scrollListener = () => {
+    console.log("Reach");
+     if (!target.current) {
+       return;
+     }
+ 
+     const element = target.current;
+     const windowScroll = element.scrollTop; // Distance of the scrollbar from the leftmost point
+     const totalHeight = element.scrollHeight - element.clientHeight; // Total width the scrollbar can traverse
+     if (windowScroll === 0) {
+       return setScrollProgress(0);
+     }
+ 
+     if (windowScroll > totalHeight) {
+       return setScrollProgress(100);
+      }
+  
+     setScrollProgress((windowScroll / totalHeight) * 100);
+   };
+
+   useEffect(() => {
+     if (!target.current) {
+       return;
+      }
+
+    const element = target.current;
+    
+        element.addEventListener('scroll', scrollListener);
+
+        return () => {
+          element.removeEventListener('scroll', scrollListener);
+        };
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      webGLFluidEnhanced.simulation(canvas, {
+        SIM_RESOLUTION: 128, // Resolution of the simulation grid
+        DYE_RESOLUTION: 1024, // Resolution of the dye grid
+        CAPTURE_RESOLUTION: 512, // Resolution of captured frames
+        DENSITY_DISSIPATION: 3, // Rate at which density dissipates
+        VELOCITY_DISSIPATION: 0.2, // Rate at which velocity dissipates
+        PRESSURE: 0.8, // Pressure value used in the simulation
+        PRESSURE_ITERATIONS: 20, // Number of pressure iterations
+        CURL: 10, // Curl value used in the simulation
+        INITIAL: true, // Enables splats on initial load
+        SPLAT_AMOUNT: 3, // Number of initial splats (Random number between n and n * 5)
+        SPLAT_RADIUS: 0.2, // Radius of the splats
+        SPLAT_FORCE: 7000, // Force applied by the splats
+        SPLAT_KEY: 'Space', // Keyboard key to spawn new splats (empty to disable)
+        SHADING: true, // Enables shading in the visualization
+        COLORFUL: true, // Enables rapid changing of colors
+        COLOR_UPDATE_SPEED: 12, // Speed of color update
+        HOVER: true, // Enables interaction on hover
+        BACK_COLOR: '#000000', // Background color of the canvas
+        TRANSPARENT: false, // Makes the canvas transparent if true
+        BRIGHTNESS: 0.6, // Color brightness (Recommend lower than 1.0 if BLOOM is true)
+        BLOOM: true, // Enables bloom effect
+        BLOOM_ITERATIONS: 20, // Number of bloom effect iterations
+        BLOOM_RESOLUTION: 256, // Resolution of the bloom effect
+        BLOOM_INTENSITY: 1, // Intensity of the bloom effect
+        BLOOM_THRESHOLD: 0.6, // Threshold for the bloom effect
+        BLOOM_SOFT_KNEE: 1, // Soft knee value for the bloom effect
+        SUNRAYS: true, // Enables sunrays effect
+        SUNRAYS_RESOLUTION: 64, // Resolution of the sunrays effect
+        SUNRAYS_WEIGHT: 0.8, // Weight of the sunrays effect
+        COLOR_PALETTE:  ['#FF76CE','#C40C0C','#004225','#FC4100','#FF7F3E','#5BBCFF','#8576FF','#B51B75','#4793AF','#FAEE1C','#00215E','#FFC55A','#5E1675','#9195F6','#FFC94A','#0079FF','#06FF00','#AA2EE6','#3F52E3'],
+      });
+    }
+  }, []);  
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+      <canvas ref={canvasRef} style={{ width: '100vw', height: '100vh', zIndex: "0", position: "fixed" }} />
+      <div ref={target} className="flex min-h-screen flex-col items-center">
+        <Navbar scrollProgress={scrollProgress} setShowMobileMenu={setShowMobileMenu} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <MobileBurgerView showMobileMenu={showMobileMenu} setShowMobileMenu={setShowMobileMenu} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Hero/>
+        <About/>
+        <Project/>
+        <Skills/>
+        <Certificates/>
+        <Contact/>
+        <Footer/>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
