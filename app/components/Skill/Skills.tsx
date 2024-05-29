@@ -22,9 +22,9 @@ function Skills() {
             key={index}
             onMouseLeave={() => setHoveredSkill(null)}
             onMouseEnter={() => setHoveredSkill(skill.name)}
-            className={`skill-container ${hoveredSkill === skill.name ? skill.name.toLowerCase() : ''} ${showAll?skill.name.toLowerCase() : ''} pointer-events-auto lowercase z-20 flex md:justify-center md:items-center py-0 md:px-3 font-bold bg-[#1a1e21] overflow-hidden cursor-pointer transition-all ease-in duration-150  w-full md:min-w-customWidth`}
+            className={`skill-container ${hoveredSkill === skill.name ? skill.name.toLowerCase() : ''} ${showAll?skill.name.toLowerCase() : ''} pointer-events-auto lowercase z-20 flex md:justify-center md:items-center py-0 md:px-4 font-bold bg-[#1a1e21] overflow-hidden cursor-pointer transition-all ease-in duration-150  w-full md:min-w-customWidth`}
           >
-                <div className={`img-container ${skill.name.toLowerCase()} lowercase max-w-[50px] min-w-[50px] min-h-[50px] max-h-[50px] flex justify-center items-center `}>
+                <div className={`img-container ${skill.name.toLowerCase()} lowercase max-w-[60px] min-w-[60px] min-h-[50px] max-h-[50px] flex justify-center items-center`}>
                 <Image src={skill.icon}  alt="Skill Icon" className='w-8'/>
                 </div>
                 <div  className={`skill  flex flex-col items-start justify-center pl-3 min-w-[110px] max-w-[110px]`}>

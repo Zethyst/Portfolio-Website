@@ -65,7 +65,7 @@ function Project() {
             imageModalSrc={imageModalSrc}
             setImageModalSrc={setImageModalSrc}/>
 
-    <Element id="project" name="project" className="corners relative pointer-events-none w-full h-[85vh] my-8 flex flex-col justify-center items-center gap-5">
+    <Element id="project" name="project" className="corners relative pointer-events-none w-full h-[87vh] my-8 flex flex-col justify-center items-center gap-5">
       <div className="top left"></div>
       <div className="top right"></div>
       <div className="bottom right"></div>

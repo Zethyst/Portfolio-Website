@@ -26,7 +26,7 @@ function Certificates() {
     <Element
       id="certificate"
       name="certificate"
-      className="corners relative pointer-events-none w-full h-[85vh] my-8 flex flex-col justify-center items-center gap-5"
+      className="corners relative pointer-events-none w-full h-[87vh] my-8 flex flex-col justify-center items-center gap-5"
     >
       <div className="top left"></div>
       <div className="top right"></div>
@@ -36,7 +36,7 @@ function Certificates() {
       <div className="cut font-semibold text-white flex flex-col relative overflow-hidden w-[90%] md:w-[80%]">
         <div className="h-full bg-[#1A1E21] w-full p-6 md:p-7 flex flex-col justify-center items-center">
           <p
-            className="text-4xl md:text-6xl tracking-wider heading relative uppercase italic text-[#ccc]"
+            className="text-4xl md:text-5xl tracking-wider heading relative uppercase italic text-[#ccc]"
             style={{ fontFamily: "Russo One, sans-serif" }}
           >
             Bondafides
@@ -57,7 +57,7 @@ function Certificates() {
             className="fa-solid fa-chevron-right pointer-events-auto absolute z-50 right-3 md:right-10 text-[#ccc] top-[50%] translate-y-[-50%] cursor-pointer opacity-60 hover:opacity-100 scale-[2]"
           ></i> */}
 
-          <div  className="flex md:h-full w-80 md:w-[700px] m-10 bg-[#1a1e21] ImageContainerNotch ">
+          <div  className="flex md:h-full w-80 md:w-[700px] m-4 bg-[#1a1e21] ImageContainerNotch ">
             <div className="h-full pointer-events-auto inner m-4 flex  items-start justify-center ImageInnerNotch">
               <div className=" md:h-96 w-full object-cover flex">
                 {certificateData.imgs.map((src,i)=>{
