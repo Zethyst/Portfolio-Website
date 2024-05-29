@@ -26,7 +26,7 @@ function Hero() {
     // Check if the Vibration API is supported
     if (navigator.vibrate) {
       // Vibrate for 200 milliseconds
-      navigator.vibrate(200);
+      navigator.vibrate(400);
     } else {
       console.log("Vibration API is not supported on this device.");
     }

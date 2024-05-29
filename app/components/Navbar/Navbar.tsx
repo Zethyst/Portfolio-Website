@@ -53,13 +53,13 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
       // }, [scrollProgress]);
 
   return (
-    <div className='sticky top-0 w-full p-4 py-7 md:py-5 flex justify-center md:justify-around items-center gap-5 backdrop-blur-lg shadow-lg z-10'>
+    <div className='sticky top-0 w-full p-4 py-10 flex justify-center md:justify-between items-center gap-5 backdrop-blur-lg shadow-lg z-10'>
         {/* MOBILE HAMBURGER */}
         <div  onClick={() => setShowMobileMenu(true)} className='block md:hidden cursor-pointer text-[#FFD474] absolute scale-125 left-10 top-[70%] translate-y-[-50%] min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
           <i className="hamburger max-w-[40px] min-h-[40px] max-h-[40px] fa-solid fa-bars scale-150"></i>
         </div>
         <div></div>
-      <div className='hidden md:flex gap-10'>
+      <div className='hidden md:flex gap-10 absolute left-24'>
         <a href="https://github.com/Zethyst" target='_blank' className='scale-125 hover:text-[#FFD474]'>
           <i className="fa-brands fa-github"></i>
         </a>
@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
               </div>
             </div>
       </div>
-      <div className='mx-44 flex justify-center items-center'>
+      <div className='absolute scale-125 left-1/2  top-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
         <ScrollLink 
            to="home" 
            spy={true} 
@@ -99,10 +99,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
            //   activeClass='active-link'
            onClick={() => setShowMobileMenu(false)}
            >
-           <Image className="object-cover md:translate-x-20" src={Logo} height={50} alt='Logo'/>
+           <Image className="object-cover" src={Logo} height={70} alt='Logo'/>
         </ScrollLink>
       </div>
-      <ul className='hidden md:flex gap-8 font-semibold mx-10'>
+      <ul className='hidden md:flex gap-8 font-semibold absolute right-20'>
         <ScrollLink 
           to="about" 
           spy={true} 
