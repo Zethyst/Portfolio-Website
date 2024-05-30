@@ -70,7 +70,7 @@ function Project() {
       <div className="top right"></div>
       <div className="bottom right"></div>
       <div className="bottom left"></div>
-      <div id='trigger' className="cut font-semibold text-white flex flex-col relative overflow-hidden w-[80%] ">
+      <div id='trigger' className="cut font-semibold text-white flex flex-col relative overflow-hidden w-[90%] md:w-[80%] ">
         <div className="h-full bg-[#1A1E21] w-full p-6 md:p-8 flex justify-center items-center">
           <p
             className="text-4xl md:text-6xl tracking-wider heading relative uppercase italic text-[#ccc]"
