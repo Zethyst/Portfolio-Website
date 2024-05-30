@@ -93,7 +93,7 @@ const About: React.FC = () => {
 
   return (
     <Element id="about" name="about"
-      className="corners relative pointer-events-none translate-y-[100px] w-full h-[85vh] my-10 flex flex-col justify-center items-center gap-5">
+      className="corners relative pointer-events-none  w-full h-[85vh] my-10 flex flex-col justify-center items-center gap-5">
       <div className="top left"></div>
       <div className="top right"></div>
       <div className="bottom right"></div>
