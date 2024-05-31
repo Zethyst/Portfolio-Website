@@ -128,7 +128,7 @@ body {
   height: 35px;
   max-height: 35px;
   background: var(--background-color);
-  padding: 0.5em 1.2em;
+  padding: 0.5em 1em;
   border: 0;
   position: relative;
   pointer-events: all;
