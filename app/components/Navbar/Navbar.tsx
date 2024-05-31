@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
               </div>
             </div>
       </div>
-      <div className='absolute scale-125 left-1/2  top-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
+      <div className='absolute scale-150 left-1/2 transform -translate-x-1/2 top-[55%] translate-y-[-50%] min-w-[50px] max-w-[50px] min-h-[50px] max-h-[50px]'>
         <ScrollLink 
            to="home" 
            spy={true} 
@@ -101,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
            //   activeClass='active-link'
            onClick={() => setShowMobileMenu(false)}
            >
-           <Image className="object-cover" src={Logo} height={70} alt='Logo'/>
+           <Image className="object-cover" src={Logo} height={80} alt='Logo'/>
         </ScrollLink>
       </div>
       <ul className='hidden md:flex gap-8 font-semibold absolute right-20'>
