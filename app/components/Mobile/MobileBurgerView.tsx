@@ -123,17 +123,17 @@ const MobileBurgerView: React.FC<MobileMenuProps>= ({ showMobileMenu, setShowMob
                         </svg>
                         </a>
                         <i className="fa-solid fa-envelope cursor-pointer fa-lg translate-y-3 hover:text-[#FFD474]" onClick={() => setShowEmail(!showEmail)} ></i>
-                        <div className={`absolute top-20 h-0 max-h-0 transition-all ease-linear duration-300 text-black overflow-hidden ${showEmail ? "activeMailWrapper" : "inactive"}`}
+                        <div className={`absolute bottom-5 -translate-x-12 md:translate-x-0 md:top-20 h-0 max-h-0 transition-all ease-linear duration-300 text-black overflow-hidden ${showEmail ? "activeMailWrapper" : "inactive"}`}
                             >
                             <span className={`absolute font-semibold opacity-0 top-[1000px] left-0 flex text-yellow-400 z-50 ${floating && "activeText"}`}>
                                 Copied!
                             </span>
-                            <div className={`$p-0 h-0 max-h-0 font-bold text-xl flex justify-center items-center  transition-all ease-linear duration-300 relative overflow-visible ${showEmail ? "mail" : "inactive"}`}>
+                            <div className={`p-0 h-0 max-h-0 font-bold text-lg md:text-xl flex justify-center items-center  transition-all ease-linear duration-300 relative overflow-visible ${showEmail ? "mail" : "inactive"}`}>
                             <i className="fa-solid fa-copy mail-icon cursor-pointer"
                                 onClick={() => handleCopyValue("21052646@kiit.ac.in")}></i>
                                 21052646@kiit.ac.in
 
-                                <i className="fa-solid fa-xmark mail-icon translate-x-4 cursor-pointer"
+                                <i className="fa-solid fa-xmark mail-icon translate-x-1 cursor-pointer"
                                 onClick={() => setShowEmail(false)}
                                 />
                             </div>

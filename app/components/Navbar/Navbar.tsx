@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 import Logo from '../../assets/Logo.png';
 import Image from 'next/image';
+import Menu from '../../assets/menu.png'
 import { Link as ScrollLink } from 'react-scroll'; // Import Link from react-scroll
 
 interface NavbarProps {
@@ -55,8 +56,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
   return (
     <div className='sticky top-0 w-full p-4 py-10 flex justify-center md:justify-between items-center gap-5 backdrop-blur-lg shadow-lg z-10'>
         {/* MOBILE HAMBURGER */}
-        <div  onClick={() => setShowMobileMenu(true)} className='block md:hidden cursor-pointer text-[#FFD474] absolute scale-125 left-10 top-[70%] translate-y-[-50%] min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
-          <i className="hamburger max-w-[40px] min-h-[40px] max-h-[40px] fa-solid fa-bars scale-150"></i>
+        <div  onClick={() => setShowMobileMenu(true)} className='block md:hidden cursor-pointer text-[#FFD474] absolute  left-10 top-[50%] translate-y-[-50%] min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px]'>
+          <Image src={Menu} alt='Menu'/>
+          {/* <i className="hamburger max-w-[40px] min-h-[40px] max-h-[40px] fa-solid fa-bars scale-150"></i> */}
         </div>
         <div></div>
       <div className='hidden md:flex gap-10 absolute left-24'>
@@ -83,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
                   onClick={() => handleCopyValue("21052646@kiit.ac.in")}></i>
                 21052646@kiit.ac.in
 
-                <i className="fa-solid fa-xmark mail-icon translate-x-4 cursor-pointer"
+                <i className="fa-solid fa-xmark mail-icon translate-x-2 cursor-pointer"
                   onClick={() => setShowEmail(false)}
                 />
               </div>
