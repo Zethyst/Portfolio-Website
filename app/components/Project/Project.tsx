@@ -36,6 +36,7 @@ function Project() {
       const [active, setActive] = useState(false);
       // true: all projects, false: single project
       const [content, setContent] = useState(true);
+
       const [proj, setProj] = useState<ProjectType>(_projects[0]);
 
       const [imageModalProject, setImageModalProject] = useState<ProjectType>(_projects[0]);
@@ -79,7 +80,7 @@ function Project() {
             Projects
           </p>
           <div className='hidden md:flex flex-col justify-center items-start gap-3 absolute right-8'>
-          <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-up-right-and-down-left-from-center"></i>{content?"Expand Details":"Close Details"}</span>
+          <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className={`fa-solid ${content?"fa-up-right-and-down-left-from-center":"fa-down-left-and-up-right-to-center"}`}></i>{content?"Expand Details":"Close Details"}</span>
           <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-globe"></i>Live Site</span>
           <span className='flex justify-center items-center gap-3 text-[#ccc] font-normal'><i className="fa-solid fa-code"></i>Code Repo</span>
           </div>
@@ -115,7 +116,7 @@ function Project() {
                   {project.title}
                 </p>
                 <div className='flex justify-center items-center gap-5' >
-                <i onClick={() => handleDetails(project)} className="fa-solid fa-up-right-and-down-left-from-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i>
+                <i onClick={() => handleDetails(project)} className={`fa-solid fa-up-right-and-down-left-from-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]`}></i>
                 <a href={project.live} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-globe text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
                 <a href={project.repository} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-code text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
                     </div>

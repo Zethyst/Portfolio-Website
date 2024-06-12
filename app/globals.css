@@ -1260,6 +1260,10 @@ rgba(255, 212, 116, 1)
   background-color: whitesmoke;
   color: black;
 }
+.socket{
+  background-color: black;
+  color: whitesmoke;
+}
 .premierepro{
   background-color: #4a1359;
   color: black;

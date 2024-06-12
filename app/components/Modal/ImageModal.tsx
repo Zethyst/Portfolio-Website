@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Project as ProjectType } from '../Project/types';
 import Image from 'next/image';
 
@@ -35,6 +35,29 @@ const ImageModal: React.FC<ImageModalProps> = ({
       }
     }
   };
+
+  const handleKeyDown = (event: KeyboardEvent) => {
+    switch (event.key) {
+      case 'ArrowLeft':
+        handleImgChange("bwd")
+        break;
+      case 'ArrowRight':
+        handleImgChange("fwd")
+        break;
+      case 'Escape':
+        setShowImageModal(false)
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <>

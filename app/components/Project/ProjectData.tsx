@@ -2,6 +2,8 @@ import { Project } from "./types";
 
 // language icon images
 import reactIcon from "../../assets/languages/react.png";
+import typescriptIcon from "../../assets/languages/typescript.png";
+import nextjsIcon from "../../assets/languages/nextjs.png";
 import cssIcon from "../../assets/languages/css.png";
 import firebaseIcon from "../../assets/languages/firebase.png";
 import javascriptIcon from "../../assets/languages/javascript.png";
@@ -16,6 +18,7 @@ import awsIcon from "../../assets/languages/aws.png";
 import herokuIcon from "../../assets/languages/heroku.png";
 import jwtIcon from "../../assets/languages/jwt.png";
 import reduxIcon from "../../assets/languages/redux.png";
+import socketIcon from "../../assets/languages/socket.png";
 
 // iNotebook Project images
 import iNotebookImg5 from "../../assets/projects/iNotebook/Empty.png";
@@ -33,8 +36,11 @@ import musicImg2 from "../../assets/projects/Musicapp/SongPause.png";
 import musicImg3 from "../../assets/projects/Musicapp/Albums.png";
 import musicImg4 from "../../assets/projects/Musicapp/Lyrics.png";
 
-// PDF Merger Express project images
-import MergerImg1 from "../../assets/projects/Merger/Home.png";
+// WhiteWave project images
+import WhiteboardImg1 from "../../assets/projects/WhiteWave/Home.png";
+import WhiteboardImg3 from "../../assets/projects/WhiteWave/collab.png";
+import WhiteboardImg2 from "../../assets/projects/WhiteWave/chat.png";
+import WhiteboardImg4 from "../../assets/projects/WhiteWave/room.png";
 
 export const inotebookProjectData: Project = {
   id: "1",
@@ -66,7 +72,7 @@ export const inotebookProjectData: Project = {
 };
 
 export const newsappProjectData: Project = {
-  id: "2",
+  id: "4",
   technologies: [
     { icon: tailwindIcon, color: "tailwind" },
     { icon: expressIcon, color: "express" },
@@ -105,26 +111,35 @@ export const musicappProjectData: Project = {
   repository: "https://github.com/Zethyst/Tunetron-Music-Player",
   live: "https://tunetron.vercel.app/",
   icon: <i className="fa-solid fa-music  fa-2xl"></i>,
-  bg: "radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% )",
+  bg: "linear-gradient(24deg, #fc5c7d, #6a82fb)",
   scale: 4,
 };
 
 export const mergerProjectData: Project = {
-  id: "4",
+  id: "2",
   technologies: [
-    { icon: HTMLIcon, color: "html" },
-    { icon: cssIcon, color: "css" },
-    { icon: javascriptIcon, color: "javascript" },
+    { icon: nextjsIcon, color: "nextjs" },
+    { icon: typescriptIcon, color: "typescript" },
+    { icon: tailwindIcon, color: "tailwind" },
+    { icon: reactIcon, color: "react" },
+    { icon: reduxIcon, color: "redux" },
     { icon: nodeIcon, color: "node" },
+    { icon: expressIcon, color: "express" },
+    { icon: socketIcon, color: "socket" },
   ],
-  title: "Merge Express",
+  title: "WhiteWave",
   preview:
-    "A sleek and user-friendly PDF utility application designed to merge multiple PDF files into a single document",
-  desc: "Welcome to PDF Merge Express, a sleek and user-friendly PDF merger application designed to streamline the process of merging multiple PDF files into a single cohesive document. With its intuitive interface and powerful functionality, this application simplifies the task of combining PDF files while providing an exceptional user experience.",
-  imgs: [{ src: MergerImg1 }],
-  repository: "https://github.com/Zethyst/PDF-Merge-Express",
-  live: "https://pdf-merger-zethyst.onrender.com/",
-  icon: <i className="fa-solid fa-file-pdf  fa-2xl"></i>,
-  bg: "linear-gradient(24deg, #33001b, #ff0084)",
+    "Enjoy a sleek UI, robust chat system, and a variety of drawing options including pen, line, and shapes.",
+  desc: "WhiteWave is a cutting-edge, real-time collaborative whiteboard application designed to boost teamwork and creativity across various settings. It's the perfect tool for brainstorming, teaching, and project planning. Key features include an integrated chat system, versatile drawing options like pens, lines, and shapes, customizable color and thickness controls, and essential undo/redo functionality.",
+  imgs: [{ src: WhiteboardImg1 },
+    { src: WhiteboardImg2 },
+    { src: WhiteboardImg3 },
+    { src: WhiteboardImg4 },
+  ],
+  repository: "https://github.com/Zethyst/Real-Time-WhiteBoard-Sharing-App",
+  live: "https://real-time-white-board-sharing-app.vercel.app/",
+  // icon: <i className="fa-solid fa-chalkboard-user fa-2xl"></i>,
+  icon: <i className="fa-solid fa-compass-drafting fa-2xl"></i>,
+  bg: "radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% )",
   scale: 3.5,
 };

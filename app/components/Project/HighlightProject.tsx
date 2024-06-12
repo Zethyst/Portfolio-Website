@@ -80,7 +80,7 @@ const HighlightProject: React.FC<HighlightProjectProps> = ({
               background: project.bg,
             }}
           >
-            <span className={`scale-125 translate-y-1`}>{project.icon}</span>
+            <span className={`scale-105 `}>{project.icon}</span>
           </div>
           {/* TITLE */}
           <div className="flex gap-5 md:gap-7  justify-center items-center">
@@ -92,7 +92,7 @@ const HighlightProject: React.FC<HighlightProjectProps> = ({
               {project.title}
             </p>
               {/* CLOSE DETAILS */} 
-                <i onClick={() => handleDetails(project)} className="fa-solid fa-up-right-and-down-left-from-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i>
+                <i onClick={() => handleDetails(project)} className="fa-solid fa-down-left-and-up-right-to-center text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i>
             {/* LIVE LINK */}
             <a href={project.live} target='_blank' rel="noopener noreferrer"><i className="fa-solid fa-globe text-[#a2a0a0] cursor-pointer hover:text-[#FFD474]"></i></a>
                 
