@@ -38,7 +38,7 @@ function Hero() {
     <div className="top right"></div>
     <div className="bottom right"></div>
     <div className="bottom left"></div>
-      <p className={`text-7xl md:text-8xl uppercase text-center italic tracking-wide`} style={{fontFamily:"Russo One, sans-serif"}}>Akshat Jaiswal</p>
+      <p className={`text-7xl md:text-8xl uppercase text-center italic tracking-wide text-white`} style={{fontFamily:"Russo One, sans-serif"}}>Akshat Jaiswal</p>
       <button onClick={handleButtonClick}  className="button text-3xl font-semibold text-black flex"> <span ref={el} /></button>
   </Element>
   )

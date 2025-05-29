@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
           {/* <i className="hamburger max-w-[40px] min-h-[40px] max-h-[40px] fa-solid fa-bars scale-150"></i> */}
         </div>
         <div></div>
-      <div className='hidden md:flex gap-10 absolute left-24'>
+      <div className='hidden md:flex gap-10 absolute left-24 text-white'>
         <a href="https://github.com/Zethyst" target='_blank' className='scale-125 hover:text-[#FFD474]'>
           <i className="fa-brands fa-github"></i>
         </a>
@@ -104,13 +104,13 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
            <Image className="object-cover" src={Logo} height={80} alt='Logo'/>
         </ScrollLink>
       </div>
-      <ul className='hidden md:flex gap-8 font-semibold absolute right-20'>
+      <ul className='hidden md:flex gap-8 font-semibold absolute right-20 text-white'>
         <ScrollLink 
           to="about" 
           spy={true} 
           smooth={true} 
           duration={700} 
-          className={`nav-item cursor-pointer ${currentPage === "about" && "scale-150"}` }
+          className={`nav-item text-white cursor-pointer ${currentPage === "about" && "scale-150"}` }
         //   activeClass='active-link'
         >
           About
@@ -121,7 +121,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
           spy={true} 
           smooth={true} 
           duration={700} 
-          className={`nav-item cursor-pointer ${currentPage === "project" && "activeLink"}` }
+          className={`nav-item text-white cursor-pointer ${currentPage === "project" && "activeLink"}` }
         //   activeClass='active-link'
         >
           Projects
@@ -132,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
           spy={true} 
           smooth={true} 
           duration={700} 
-          className={`nav-item cursor-pointer ${currentPage === "skill" && "activeLink"}` }
+          className={`nav-item text-white cursor-pointer ${currentPage === "skill" && "activeLink"}` }
         //   activeClass='active-link'
         >
           Skills
@@ -143,7 +143,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
           spy={true} 
           smooth={true} 
           duration={700} 
-          className={`nav-item cursor-pointer ${currentPage === "certificate" && "activeLink"}` }
+          className={`nav-item text-white cursor-pointer ${currentPage === "certificate" && "activeLink"}` }
         //   activeClass='active-link'
         >
           Certificates
@@ -154,7 +154,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollProgress, setShowMobileMenu, curr
           spy={true} 
           smooth={true} 
           duration={700} 
-          className={`nav-item cursor-pointer ${currentPage === "contact" && "activeLink"}` }
+          className={`nav-item text-white cursor-pointer ${currentPage === "contact" && "activeLink"}` }
         //   activeClass='active-link'
         >
           Contact

@@ -101,19 +101,23 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.activeMailWrapper {
-  height: 100px;
-  max-height: 100px;
-  overflow: visible;
-}
 .activeText {
   z-index: 100;
   animation: floatingText 1.1s ease;
 }
+.activeMailWrapper {
+  height: 100px;
+  max-height: 100px;
+  overflow: visible;
+  opacity: 1;
+  transition: all 0.3s ease-linear;
+}
+
 .inactive {
   height: 0px;
   max-height: 0px;
-  /* padding: 5px 10px; */
+  opacity: 0;
+  transition: all 0.3s ease-linear;
 }
 
 .mail {
@@ -1152,6 +1156,14 @@ rgba(255, 212, 116, 1)
 
 .express {
   background-color: #f7bd2a;
+  color: black;
+}
+.flask {
+  background-color: #3e3e3e;
+  color: black;
+}
+.docker {
+  background-color: #2496ED;
   color: black;
 }
 
